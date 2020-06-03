@@ -1,0 +1,31 @@
+<script>
+function add5(a, callback){
+    setTimeout(() => callback(a + 5), 100);
+};
+    
+    var callback = add5(10, res => {
+        add5(res, res => {
+            add5(res, res => {
+                add5(res, res => {
+                    add5(res, res => {
+                        console.log(res);
+                    });
+                })
+            })
+        })
+    });
+console.log(callback); //undefined
+               
+function add10(a){
+    return new Promise(resolve => setTimeout(() => resolve(a + 10), 100));
+};
+    
+    var promise = add10(5)
+        .then(add10)
+        .then(add10)
+        .then(add10)
+        .then(add10)
+        .then(console.log);
+    
+console.log(promise); //비동기를 값으로 다루는 객체. promise가 리턴됨.
+</script>
