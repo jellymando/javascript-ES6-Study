@@ -1,0 +1,10 @@
+<script>
+function solution(s) {
+    var answer = s.split('') //문자를 하나씩 쪼개서 배열로 만들기
+      .sort() //오름차순 정렬
+      .reverse() //내림차순 정렬
+      .join(''); //배열을 다시 문자로 만들기
+    return answer;
+}
+console.log(solution('Zbcdefg'));
+</script>
