@@ -1,0 +1,27 @@
+<script>
+function solution(strings, n) {
+    var answer = strings.sort(function(a, b) {
+        var prevMethod = a[n];         
+        var nextMethod = b[n];
+        if (prevMethod === nextMethod) {
+            return (a > b) - (b > a)
+        } else {
+            return (prevMethod > nextMethod) - (nextMethod > prevMethod);
+        }
+    })
+    
+    var wordArrayNth = [];
+    for (i = 0; i < answer.length; i++) {
+        wordArrayNth.push(answer[i][n]);
+    }
+        wordArrayNth.sort();
+        console.log(wordArrayNth);
+    //console.log(minWordArray);
+    /*if (!strings.length < n) {
+        strings.split('').
+    } else {
+        console.log('n이 문')
+    }*/
+    return answer;
+}
+</script>
