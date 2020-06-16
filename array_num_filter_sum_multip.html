@@ -1,0 +1,25 @@
+<script>
+function solution(X, Y) {
+    var int = [];
+    var array = [];    
+    if(X >= Y) {        
+        for(let i = 0; i < X; i++){
+           array.push(String(i+1));
+        }
+        var num = array.filter(
+           (n) => n.indexOf(Y) !== -1
+        )
+        var numLength = num.length;
+        var sum = 0;
+        for(let j = 0; j < num.length; j++){
+            sum += parseInt(num[j]);
+        }
+        var multip = parseInt(num.reduce((a,b) => a*b));
+        int.push(numLength,sum,multip);
+    }else{
+        int.push(0,0,0);
+    }   
+    return int;
+}
+
+</script>
