@@ -1,0 +1,30 @@
+<script>
+    var answer = 0;
+    
+    function solution(s) {
+        var sArray = s.split('');
+        var nArray = [];
+        for(let i=0;i<sArray.length;i++){
+            if(sArray[i] === nArray[nArray.length - 1]){
+                nArray.pop();
+            }else{
+                nArray.push(sArray[i]);
+            }
+        }
+        console.log(nArray);
+        return answer;
+    }
+    solution('baabaa');
+    
+     var stringToArray = s.split("");
+  var res = [];
+
+  for (var val of stringToArray) {
+    if (val === res[res.length - 1]) {
+      res.pop();
+    } else {
+      res.push(val);
+    }
+  }
+  return res.length === 0 ? 1 : 0;
+</script>
